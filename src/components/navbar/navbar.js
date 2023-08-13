@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { auth } from "../../utils/Firebase/firebase.utils";
 import { UserContext } from "../../context/context.component";
@@ -16,6 +16,11 @@ function Navbar() {
     await auth.signOut();
     alert("Signed out");
   };
+  const [toggle, setToggle] = useState(false);
+
+  const expand = () => {
+    setToggle(!toggle);
+  };
 
   return (
     <Fragment>
@@ -31,7 +36,8 @@ function Navbar() {
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
             aria-controls="navbar-solid-bg"
-            aria-expanded="false"
+            aria-expanded={toggle}
+            onClick={expand}
           >
             <span className="sr-only">Open main menu</span>
             <svg
@@ -51,7 +57,9 @@ function Navbar() {
             </svg>
           </button>
           <div
-            className="hidden w-full md:block md:w-auto"
+            className={`${
+              toggle ? "block" : "hidden"
+            } w-full md:block md:w-auto`}
             id="navbar-solid-bg"
           >
             <ul className="mt-4 flex flex-col rounded-lg bg-gray-50 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-transparent ">
