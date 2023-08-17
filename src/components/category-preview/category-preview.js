@@ -11,7 +11,7 @@ function CategoryPreview({ title }) {
       <div>
         <div className="xs px-7 pt-14 sm:px-20 ">
           <Link to={title}>
-            <span className=" font-mono text-xl font-semibold text-gray-800">
+            <span className=" font-mono text-xl font-semibold text-gray-800 hover:text-blue-700">
               {title.toUpperCase()}
             </span>
           </Link>

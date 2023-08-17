@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { auth } from "../../utils/Firebase/firebase.utils";
 import { UserContext } from "../../context/context.component";
@@ -28,7 +28,7 @@ function Navbar() {
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
           <Link to={"/"} className="flex items-center">
             <span className="ml-3 self-center whitespace-nowrap text-2xl font-semibold">
-              React Clothing
+              Crown Clothing
             </span>
           </Link>
           <button
