@@ -21,10 +21,14 @@ function Product({ product }) {
   return (
     <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
       <a
-        className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+        className="relative mx-3 mt-3 flex h-60 justify-center overflow-hidden rounded-xl"
         href="#"
       >
-        <img className="object-cover" src={imageUrl} alt="product image" />
+        <img
+          className="rounded-lg object-cover"
+          src={imageUrl}
+          alt="product image"
+        />
         {valueCheck > 0 && (
           <span className="absolute left-0 top-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
             {Math.round(offer * 1) / 1}% OFF

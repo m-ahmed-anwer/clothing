@@ -18,10 +18,9 @@ function CategoryPreview({ title }) {
         </div>
 
         <div className="container inline-grid gap-4 pb-20 sm:grid-cols-2  md:grid-cols-3 ">
-          {Array.isArray(catergoriesMap[title]) &&
-            catergoriesMap[title]
-              .slice(0, 3)
-              .map((item) => <Product product={item} key={item.id} />)}
+          {catergoriesMap[title].slice(0, 3).map((item) => (
+            <Product product={item} key={item.id} />
+          ))}
         </div>
       </div>
     </>
